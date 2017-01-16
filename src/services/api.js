@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     baseURL: 'https://api.wvvw.me/',
-    timeout: 100,
+    timeout: 1000,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
