@@ -27,8 +27,8 @@ RUN cp /src/index.html /var/www/html/index.html
 # Cleanup yarn build files
 RUN rm -rf /src
 
-ENTRYPOINT ["/sbin/tini"]
+EXPOSE 5000
 
-EXPOSE 8080
+ENTRYPOINT ["/sbin/tini"]
 
 CMD ["caddy", "-quic", "--conf", "/etc/Caddyfile"]

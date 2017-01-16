@@ -1,5 +1,6 @@
-localhost:8080 {
+localhost:5000 {
     root /var/www/html
+    tls off
     rewrite {
         to {path} {path}/ /index.html
     }
