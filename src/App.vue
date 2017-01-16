@@ -7,9 +7,9 @@
             <nav class="nav">
                 <ul>
                     <li><a href="https://api.wvvw.me/">API (Alpha)</a></li>
-                    <li><a href="/">Blog</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+                    <li><router-link :to="{ name: 'about' }">About</router-link></li>
+                    <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
                     <li><a href="https://github.com/omgimalexis">Github</a></li>
                 </ul>
             </nav>
