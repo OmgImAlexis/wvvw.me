@@ -21,8 +21,10 @@ RUN yarn build
 
 # Copy over a Caddyfile and SPA files
 RUN cp /src/Caddyfile /etc/Caddyfile
-RUN mkdir -p /var/www/html/dist/ && cp /src/dist/build.js /var/www/html/dist/build.js
+RUN mkdir -p /var/www/html/dist/
+RUN cp /src/dist/build.js /var/www/html/dist/build.js
 RUN cp /src/index.html /var/www/html/index.html
+RUN cp /src/dist/favicon.* /var/www/html/
 
 # Cleanup yarn build files
 RUN rm -rf /src

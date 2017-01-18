@@ -5,6 +5,8 @@
     log stdout
     errors stdout
     rewrite {
+        if {file} not favicon.ico
+        if {file} not favicon.png
         to {path} {path}/ /index.html
     }
 }
