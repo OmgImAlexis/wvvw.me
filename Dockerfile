@@ -17,6 +17,8 @@ RUN apk del devs
 WORKDIR /src
 ADD . .
 
+RUN echo ''
+
 RUN yarn install
 RUN yarn build
 
