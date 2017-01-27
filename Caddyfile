@@ -12,14 +12,16 @@
 
     # security headers
     header / {
-    	Content-Security-Policy default-src https://wvvw.me, https://api.wvvw.me;
+    	Content-Security-Policy "default-src 'unsafe-inline' https://wvvw.me; connect-src https://api.wvvw.me;"
         # Enable HTTP Strict Transport Security (HSTS) to force clients to always connect via HTTPS
-        Strict-Transport-Security "max-age=31536000;"
+        Strict-Transport-Security "max-age=7776000;"
         # Enable cross-site filter (XSS) and tell browser to block detected attacks
         X-XSS-Protection "1; mode=block"
         # Prevent some browsers from MIME-sniffing a response away from the declared Content-Type
         X-Content-Type-Options "nosniff"
         # Disallow the site to be rendered within a frame (clickjacking protection)
         X-Frame-Options "DENY"
+        # Pin the Let's Encrypt Public cert for 90 days
+        Public-Key-Pins "pin-sha256='C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M='; pin-sha256='YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg='; max-age=7776000"
     }
 }
