@@ -16,7 +16,7 @@ RUN apk del devs
 WORKDIR /src
 ADD . .
 
-RUN yarn install
+RUN yarn cache clean && yarn install --verbose
 RUN yarn build 
 
 # Copy over a Caddyfile and SPA files
