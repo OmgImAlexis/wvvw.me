@@ -12,7 +12,7 @@
 
     # security headers
     header / {
-    	Content-Security-Policy "default-src 'unsafe-inline' https://wvvw.me; connect-src https://api.wvvw.me;"
+    	Content-Security-Policy "default-src https://wvvw.me/bundle.js connect-src https://api.wvvw.me;"
         # Enable HTTP Strict Transport Security (HSTS) to force clients to always connect via HTTPS
         Strict-Transport-Security "max-age=7776000;"
         # Enable cross-site filter (XSS) and tell browser to block detected attacks
@@ -23,5 +23,7 @@
         X-Frame-Options "DENY"
         # Pin the Let's Encrypt Public cert for 90 days
         Public-Key-Pins "pin-sha256='C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M='; pin-sha256='YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg='; max-age=7776000"
+        # Set customer server name
+        Server "FUCK TRUMP!"
     }
 }
