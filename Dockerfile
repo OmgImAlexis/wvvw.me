@@ -33,4 +33,4 @@ EXPOSE 5000
 
 ENTRYPOINT ["/sbin/tini"]
 
-CMD ["caddy", "-quic", "--conf", "/etc/Caddyfile"]
+CMD ["caddy", "--conf", "/etc/Caddyfile"]
