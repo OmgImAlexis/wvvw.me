@@ -29,7 +29,7 @@ RUN cp /src/dist/favicon.* /var/www/html/
 # Cleanup yarn build files
 RUN rm -rf /src
 
-ADD nginx.conf.sigil /app/nginx.conf.signil
+ADD nginx.conf.sigil .
 
 EXPOSE 5000
 
