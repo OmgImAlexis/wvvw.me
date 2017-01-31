@@ -25,7 +25,7 @@ RUN mkdir -p /var/www/html/dist/ && mkdir /app
 RUN cp /src/dist/build.js /var/www/html/dist/build.js
 RUN cp /src/index.html /var/www/html/index.html
 RUN cp /src/dist/favicon.* /var/www/html/
-RUN cp /src/nginx.conf.sigil /app/
+ADD nginx.conf.sigil /app/nginx.conf.signil
 
 # Cleanup yarn build files
 RUN rm -rf /src
