@@ -16,15 +16,16 @@ RUN apk del devs
 WORKDIR /src
 ADD . .
 
-RUN yarn cache clean && yarn install
+RUN yarn install
 RUN yarn build 
 
 # Copy over a Caddyfile and SPA files
 RUN cp /src/Caddyfile /etc/Caddyfile
-RUN mkdir -p /var/www/html/dist/
+RUN mkdir -p /var/www/html/dist/ && mkdir /app
 RUN cp /src/dist/build.js /var/www/html/dist/build.js
 RUN cp /src/index.html /var/www/html/index.html
 RUN cp /src/dist/favicon.* /var/www/html/
+RUN cp /src/nginx.conf.sigil /app/
 
 # Cleanup yarn build files
 RUN rm -rf /src
