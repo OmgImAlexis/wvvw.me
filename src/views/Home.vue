@@ -30,13 +30,13 @@ export default {
     },
     mounted() {
         var vm = this;
-        api.get('post').then(function(response) {
+        api.get('post').then(response => {
             if (response.data.length <= 0) {
                 vm.error = `There aren't any posts.`;
             } else {
                 vm.posts = response.data;
             }
-        }).catch(function(error) {
+        }).catch(error => {
             vm.error = `The API isn't responding. Please check https://api.wvvw.me`;
             throw new Error(error);
         });

@@ -3,20 +3,18 @@ import VueStash from 'vue-stash';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import marked from 'marked';
-import routes from './routes.js';
-import store from './store.js';
+import routes from './routes';
+import store from './store';
 import App from './App.vue';
+import Post from './components/Post.vue';
 
 Vue.mixin({
     methods: {
-        marked: function(input) {
-            return marked(input);
-        }
+        marked
     }
 });
 
-import Post from './components/Post.vue';
-Vue.component('post', Post)
+Vue.component('post', Post);
 
 Vue.use(VueStash);
 Vue.use(VueRouter);
@@ -27,8 +25,10 @@ const router = new VueRouter({
     mode: 'history'
 });
 
-const app = new Vue({
-    router: router,
-    data: { store },
+new Vue({
+    router,
+    data: {
+        store
+    },
     render: h => h(App)
 }).$mount('#app');

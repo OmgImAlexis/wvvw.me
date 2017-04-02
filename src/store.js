@@ -1,10 +1,10 @@
 export default {
     authenticated: false,
     user: {
-        'email': ''
+        email: ''
     },
     posts: [],
     searchPosts: [],
     searchTerm: null,
     error: null
-}
+};

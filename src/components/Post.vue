@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:class="'post styled' + (post.published ? '' : 'unpublished')">
+    <div v-bind:class="['post', 'styled', (post.published ? '' : 'unpublished')]">
         <template v-if="post.published || (!post.published && user)">
             <h1 class="title">{{post.title}}</h1>
             <div class="content" v-html="marked(post.content)"></div>
@@ -9,7 +9,7 @@
             </span>
         </template>
         <template v-else>᠎᠎
-            <p>This post hasn't been published yet.</p>
+            <p class="content">This post hasn't been published yet.</p>
         </template>᠎᠎᠎
     </div>
 </template>
@@ -18,7 +18,18 @@
 import Vue from 'vue';
 export default Vue.extend({
     name: 'post',
-    props: ['post', 'user'],
+    props: {
+        post: {
+            type: String
+        },
+        user: {
+            type: Object
+        },
+        showUnpublished: {
+            type: String,
+            default: false
+        }
+    },
     computed: {
         owner() {
             var vm = this;
