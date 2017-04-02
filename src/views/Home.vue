@@ -23,7 +23,7 @@ import api from '../services/api.js';
 
 export default {
     name: 'home',
-    store: ['posts', 'searchPosts', 'searchTerm', 'error'],
+    store: ['posts', 'searchPosts', 'searchTerm', 'error', 'user'],
     data () {
         return {
         }
@@ -34,7 +34,13 @@ export default {
             if (response.data.length <= 0) {
                 vm.error = `There aren't any posts.`;
             } else {
-                vm.posts = response.data;
+                if (vm.user) {
+                    vm.posts = response.data;
+                } else {
+                    vm.posts = response.data.filter(post => {
+                        return post.published;
+                    });
+                }
             }
         }).catch(error => {
             vm.error = `The API isn't responding. Please check https://api.wvvw.me`;

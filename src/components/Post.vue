@@ -1,5 +1,5 @@
 <template>
-    <div v-if="post.published || showUnpublished" v-bind:class="['post', 'styled', (post.published ? '' : 'unpublished')]">
+    <div v-bind:class="['post', 'styled', (post.published ? '' : 'unpublished')]">
         <template v-if="post.published || (!post.published && user)">
             <h1 class="title">{{post.title}}</h1>
             <div class="content" v-html="marked(post.content)"></div>
@@ -24,10 +24,6 @@ export default Vue.extend({
         },
         user: {
             type: Object
-        },
-        showUnpublished: {
-            type: String,
-            default: false
         }
     },
     computed: {
