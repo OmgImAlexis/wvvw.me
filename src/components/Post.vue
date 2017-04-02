@@ -4,7 +4,7 @@
             <h1 class="title">{{post.title}}</h1>
             <div class="content" v-html="marked(post.content)"></div>
             <span class="meta">
-                <a v-bind:href="post.permalink">{{new Date(post.date).toISOString()}}</a>
+                <a v-bind:href="post.permalink">{{new Date(post.date).toDateString()}}</a>
                 <span class="owner">by <a v-bind:href="'/user/' + owner.id">{{owner.name}}</a></span>
             </span>
         </template>
@@ -20,7 +20,7 @@ export default Vue.extend({
     name: 'post',
     props: {
         post: {
-            type: String
+            type: Object
         },
         user: {
             type: Object
@@ -29,11 +29,10 @@ export default Vue.extend({
     computed: {
         owner() {
             var vm = this;
-            var hasName = 'name' in vm.post.owner && !!Object.keys(vm.post.owner.name).length;
-            var hasId = 'id' in vm.post.owner;
+            var isAnonymous = 'author' in vm.post;
             return {
-                name: hasName ? vm.post.owner.name : 'anonymous',
-                id: hasId ? vm.post.owner.id : 'anonymous'
+                name: isAnonymous ? vm.post.author.username : 'anonymous',
+                id: isAnonymous ? vm.post.author._id : 'anonymous'
             };
         }
     }
