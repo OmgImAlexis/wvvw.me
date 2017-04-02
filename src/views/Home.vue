@@ -30,7 +30,7 @@ export default {
     },
     mounted() {
         var vm = this;
-        api.get('posts').then(function(response) {
+        api.get('post').then(function(response) {
             if (response.data.length <= 0) {
                 vm.error = `There aren't any posts.`;
             } else {
