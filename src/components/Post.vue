@@ -9,7 +9,9 @@
             </span>
         </template>
         <template v-else>᠎᠎
-            <p class="content">This post hasn't been published yet.</p>
+            <template v-if="showUnpublished">
+                <p class="content">This post hasn't been published yet.</p>
+            </template>᠎᠎᠎
         </template>᠎᠎᠎
     </div>
 </template>
