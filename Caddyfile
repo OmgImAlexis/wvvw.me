@@ -12,7 +12,7 @@
 
     # security headers
     header / {
-    	Content-Security-Policy "script-src https://wvvw.me/dist/build.js; connect-src https://api.wvvw.me;"
+    	Content-Security-Policy "script-src https://wvvw.me/dist/build.js; connect-src https://api.wvvw.me; report-uri https://xo.report-uri.io/r/default/csp/reportOnly;"
         # Enable HTTP Strict Transport Security (HSTS) to force clients to always connect via HTTPS
         Strict-Transport-Security "max-age=7776000;"
         # Enable cross-site filter (XSS) and tell browser to block detected attacks

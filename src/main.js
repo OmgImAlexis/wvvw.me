@@ -5,7 +5,7 @@ import VueResource from 'vue-resource';
 import marked from 'marked';
 import routes from './routes';
 import store from './store';
-import App from './App.vue';
+import App from './app.vue';
 import Post from './components/Post.vue';
 
 Vue.mixin({
