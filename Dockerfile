@@ -16,8 +16,6 @@ RUN apk del devs
 WORKDIR /src
 ADD . .
 
-RUN tree
-
 RUN yarn install --prefer-offline --production
 RUN yarn build
 
