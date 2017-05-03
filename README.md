@@ -1,6 +1,6 @@
 # wvvw.me
 
-> The code that powers https://wvvw.me Edit
+> The code that powers https://wvvw.me
 
 ## Build Setup
 

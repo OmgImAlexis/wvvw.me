@@ -1,6 +1,6 @@
 {
     "name": "wvvw.me",
-    "description": "The code that powers https://wvvw.me Edit",
+    "description": "The code that powers https://wvvw.me",
     "author": "Alexis Tyler <xo@wvvw.me>",
     "private": true,
     "scripts": {
