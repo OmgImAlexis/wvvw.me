@@ -2,17 +2,10 @@ import Vue from 'vue';
 import VueStash from 'vue-stash';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
-import marked from 'marked';
 import routes from './routes';
 import store from './store';
 import App from './app.vue';
 import Post from './components/Post.vue';
-
-Vue.mixin({
-    methods: {
-        marked
-    }
-});
 
 Vue.component('post', Post);
 

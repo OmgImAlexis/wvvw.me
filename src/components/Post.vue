@@ -15,8 +15,9 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
+import marked from 'marked';
+
+export default {
     name: 'post',
     props: {
         post: {
@@ -35,6 +36,9 @@ export default Vue.extend({
                 id: isAnonymous ? vm.post.author._id : 'anonymous'
             };
         }
+    },
+    methods: {
+        marked
     }
-})
+}
 </script>
