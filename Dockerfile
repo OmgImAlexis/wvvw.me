@@ -16,8 +16,8 @@ RUN apk del devs
 WORKDIR /src
 ADD . .
 
-RUN yarn install
-RUN yarn build 
+RUN yarn install --prefer-offline --production
+RUN yarn build
 
 # Copy over a Caddyfile and SPA files
 RUN cp /src/Caddyfile /etc/Caddyfile
@@ -25,9 +25,6 @@ RUN mkdir -p /var/www/html/dist/ && mkdir /app
 RUN cp /src/dist/build.js /var/www/html/dist/build.js
 RUN cp /src/index.html /var/www/html/index.html
 RUN cp /src/dist/favicon.* /var/www/html/
-
-# Cleanup yarn build files
-RUN rm -rf /src
 
 ADD nginx.conf.sigil .
 
