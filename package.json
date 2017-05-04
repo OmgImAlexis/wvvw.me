@@ -44,7 +44,7 @@
         "bson": "^1.0.4",
         "nyc": "^10.3.0",
         "watchify": "^3.4.0",
-        "xo": "^0.18.1"
+        "xo": "^0.18.2"
     },
     "browserify": {
         "transform": [
