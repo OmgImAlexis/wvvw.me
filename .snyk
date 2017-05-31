@@ -1,0 +1,31 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:marked:20170112':
+    - marked:
+        patched: '2017-05-31T04:26:07.405Z'
+  'npm:ms:20170412':
+    - browserify-hmr > socket.io > socket.io-client > socket.io-parser > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > engine.io > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > socket.io-adapter > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > socket.io-client > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io-client > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > socket.io-client > engine.io-client > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > socket.io-parser > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io-client > socket.io-parser > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io > socket.io-adapter > socket.io-parser > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
+    - browserify-hmr > socket.io-client > engine.io-client > debug > ms:
+        patched: '2017-05-31T04:26:07.405Z'
